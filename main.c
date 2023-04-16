@@ -9,7 +9,6 @@
 //21.3. Дан одномерный массив Zn. Удалить все элементы массива с
 //четными индексами. Дописать в конец массива сумму положительных
 //элементов массива. Отсортировать исходный массив по возрастанию
-
 int main() {
     int f, n, k = 0;
         printf("Press the number of program you want to initialize(№1, №2 or №3):");
@@ -64,19 +63,55 @@ int main() {
             }
         }
         if (f == 3) {
-            int id = 1;
-            while (id != 0) {
-                for (int i = id; i < n - 1; i++) {
+            /*          int id = 1;
+                      while (id != 0) {
+                          for (int i = id; i <= n - 1; i++) {
+                              X[i] = X[i + 1];
+                          }
+                          n--;
+                          id++;
+                          if (id >= n) id = 0;
+                      }
+                      */
+
+            int id = 0;
+            while (id < n) {
+                for (int i = id; i <= n - 1; i++) {
                     X[i] = X[i + 1];
                 }
                 n--;
                 id++;
-                if (id == n) id = 0;
             }
+            printf("\nArray without even id\n");
+            for (int i = 0; i < n; i++) {
+                printf("%d ", X[i]);
+            }
+            int sum=0;
+            int g;
+            for( int i =0; i<=n-1; i++) {
+                if(X[i]>0) sum= sum + X[i];
+            }
+            n=n+1;
+            X[n-1]=sum;
+            printf("\nArray with sum\n");
+            for (int i = 0; i < n; i++) {
+                printf("%d ", X[i]);
+            }
+            for( int i=0; i<n-1;i++){
+                for(int j=0; j<n-i-1;i++){
+                    if(X[j]>X[j+1]){
+                        g=X[j];
+                        X[j]=X[j+1];
+                        X[j+1]=g;
+                    }
+                }
+            }
+            printf("\nSorted array\n");
             for (int i = 0; i < n; i++) {
                 printf("%d ", X[i]);
             }
         }
+
         return 0;
     }
 
