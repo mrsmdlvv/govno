@@ -11,7 +11,7 @@
 //элементов массива. Отсортировать исходный массив по возрастанию
 
 int main() {
-    int f, max, min, n, m, k = 0, C, D;
+    int f, n, k = 0;
         printf("Press the number of program you want to initialize(№1, №2 or №3):");
         scanf("%d", &f);
     printf("Enter the number of elements in the array: ");
@@ -22,6 +22,7 @@ int main() {
         scanf("%d", &X[i]);
     }
         if (f == 1) {
+            int C, D;
             printf("Enter the interval [C;D]:");
             scanf("%d %d", &C, &D);
             for (int i = 0; i < n; ++i) {
@@ -42,18 +43,35 @@ int main() {
                 i++;
             }
             printf("\n");
-            for (int s = 0; s < n; s++) {
-                printf("%d ", X[s]);
+            for (int i = 0; i < n; i++) {
+                printf("%d ", X[i]);
             }
             printf("\nThe changed array:\n");
+
             for (int i = 0; i < n - 1; i++) {
                 if (X[i] < 0) {
-                    X[i] = X[i + 1];
+                    for (int j = 0; j < n - 1; j++) {
+                        X[i] = X[i + 1];
+                    }
                     n--;
                 }
             }
-            for (int s = 0; s < n; s++) {
-                printf("%d ", X[s]);
+            for (int i = 0; i < n; i++) {
+                printf("%d ", X[i]);
+            }
+        }
+        if (f == 3) {
+            int id = 1;
+            while (id != 0) {
+                for (int i = id; i < n - 1; i++) {
+                    X[i] = X[i + 1];
+                }
+                n--;
+                id++;
+                if (id == n) id = 0;
+            }
+            for (int i = 0; i < n; i++) {
+                printf("%d ", X[i]);
             }
         }
         return 0;
