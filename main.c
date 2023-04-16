@@ -10,8 +10,8 @@
 //элементов массива. Отсортировать исходный массив по возрастанию
 int main() {
     int f, n, k = 0;
-        printf("Press the number of program you want to initialize(1, 2 or 3):");
-        scanf("%d", &f);
+    printf("Press the number of program you want to initialize(1, 2 or 3):");
+    scanf("%d", &f);
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
     int X[n];
@@ -45,7 +45,6 @@ int main() {
                 printf("%d ", X[i]);
             }
             printf("\nThe changed array:\n");
-
             for (int i = 0; i < n - 1; i++) {
                 if (X[i] < 0) {
                     for (int j = i; j < n - 1; j++) {
@@ -54,7 +53,6 @@ int main() {
                     n--;
                     i--;
                 }
-
             }
             n--;
             for (int i = 0; i < n; i++) {
@@ -99,7 +97,6 @@ int main() {
                 printf("%d ", X[i]);
             }
         }
-
         return 0;
     }
 
