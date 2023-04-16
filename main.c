@@ -50,12 +50,15 @@ int main() {
 
             for (int i = 0; i < n - 1; i++) {
                 if (X[i] < 0) {
-                    for (int j = 0; j < n - 1; j++) {
-                        X[i] = X[i + 1];
+                    for (int j = i; j < n - 1; j++) {
+                        X[j] = X[j + 1];
                     }
                     n--;
+                    i--;
                 }
+
             }
+            n--;
             for (int i = 0; i < n; i++) {
                 printf("%d ", X[i]);
             }
