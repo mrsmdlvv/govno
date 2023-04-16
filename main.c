@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 //№21.1. Дан одномерный массив Хn. Найти количество неотрицательных
 //элементов массива, попадающих в интервал [С ; D]. Напечатать все
 //отрицательные элементы.
@@ -11,7 +10,7 @@
 //элементов массива. Отсортировать исходный массив по возрастанию
 int main() {
     int f, n, k = 0;
-        printf("Press the number of program you want to initialize(№1, №2 or №3):");
+        printf("Press the number of program you want to initialize(1, 2 or 3):");
         scanf("%d", &f);
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
@@ -63,17 +62,6 @@ int main() {
             }
         }
         if (f == 3) {
-            /*          int id = 1;
-                      while (id != 0) {
-                          for (int i = id; i <= n - 1; i++) {
-                              X[i] = X[i + 1];
-                          }
-                          n--;
-                          id++;
-                          if (id >= n) id = 0;
-                      }
-                      */
-
             int id = 0;
             while (id < n) {
                 for (int i = id; i <= n - 1; i++) {
